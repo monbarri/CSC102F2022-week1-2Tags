@@ -11,36 +11,51 @@ Webpage with html and CSS
 <html>
 
 <head>
+    <script src="code.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>
         Monique Barrios UATSpace Page
     </title>
 </head>
 
 <body>
+    <script>
+        var alertText = "Test of the alert function.";
+        var docWriteText = "This is a test of the document. write function.";
+        var welcomeText = " Welcome to UAT Space!";
+        </script>
     <!--the UATSpace logo, downloaded from https://synchronic.uat.edu/courses/5195/assignments/187442-->
     <img src="UATspaceLogo.jpg">
 
-    <h1>
-        UAT Space Program
+    <h1 id="blinkText">
+         UAT Space Program
     </h1>
-<p>
-    Test of the paragraph tags.<br>
-    The paragraph text are used in html to display more than one sentence. 
-    This can be more than one line.
-</p>
-<script>
-    alert("Test of alert function. Welcome to UATSpace!");
-    document.write("This is a test of the document.write function.");
-</script>
-<br>
-<br>
-<br>
-<button>
-    Start
-</button>
-<button>
-    Stop
-</button>
-
+    <p>
+        This is a test of the paragraph tag.<br>
+        The paragraph text are used in html to display more than one sentence.
+        This can be more than one line.
+    </p>
+    <script>
+        document.write(docWriteText + welcomeText);
+    </script>
+    <br>
+    <br>
+    <H2>Blastoff Timer</H2>
+    <div id="countDis">When Started, Time left to Blastoff will appear here</div>
+    <br>
+    <br>
+    <button onclick="countDownTimer();">
+        Start
+    </button>
+    <button>
+        Stop
+    </button>
+    <script type="text/javascript">
+        var blink = document.getElementById('blinkText');
+    setInterval(function() {
+        blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0)
+    }, 1500);
+        </script>
 </body>
+
 </html>
