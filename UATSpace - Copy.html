@@ -1,0 +1,69 @@
+<!--
+UATSpace page for CSC102 at UAT.edu
+by Monique Barrios 
+monbarri@uat.edu
+
+Assignment: Launching your UAT Space Program HTML Document Tags
+12Sep2022
+Webpage with html and CSS
+-->
+<!DOCTYPE html>
+<!--html tag for assignment-->
+<html>
+
+<head>
+    <script src="code.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>
+        Monique Barrios UATSpace Page
+    </title>
+</head>
+
+<body>
+    <script>
+        var alertText = "Test of the alert function.";
+        var docWriteText = "This is a test of the document. write function.";
+        var welcomeText = " Welcome to UAT Space!";
+    </script>
+    
+    <img src="UATspaceLogo.jpg">
+
+    <h1 id="blinkText">
+        UAT Space Program
+    </h1>
+    <p>
+        This is a test of the paragraph tag.<br>
+        The paragraph text are used in html to display more than one sentence.
+        This can be more than one line.
+    </p>
+    <script>
+        document.write(docWriteText + welcomeText);
+    </script>
+    <br>
+    <br>
+    <H2>Blastoff Timer</H2>
+    <div id="countDis">When Started, Time left to Blastoff will appear here</div>
+    <br>
+    <br>
+    <button onclick="countDownTimer();">
+        Start
+    </button>
+    <button>
+        Stop
+    </button>
+    <script type="text/javascript">
+        var blink = document.getElementById('blinkText');
+        setInterval(function () {
+            blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0)
+        }, 1500);
+    </script>
+
+    <!-- Place to play craps-->
+    <h1>Craps Game</h1>
+    <div id="die1Res">The die 1 result will go here</div><br>
+    <div id="die2Res">The die 2 result will go here</div><br>
+    <div id="gameRes">The game results will go here</div><br>
+    <button onclick="PlayCraps();">PlayCraps</button>
+</body>
+
+</html>
