@@ -25,8 +25,15 @@ Webpage with html and CSS
         var docWriteText = "This is a test of the document. write function.";
         var welcomeText = " Welcome to UAT Space!";
     </script>
-    
+
     <img src="UATspaceLogo.jpg">
+
+    <script type="text/javascript">
+        var blink = document.getElementById('blinkText');
+        setInterval(function () {
+            blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0)
+        }, 1500);
+    </script>
 
     <h1 id="blinkText">
         UAT Space Program
@@ -41,29 +48,22 @@ Webpage with html and CSS
     </script>
     <br>
     <br>
-    <H2>Blastoff Timer</H2>
+
+    <H2>Countdown Timer</H2>
     <div id="countDis">When Started, Time left to Blastoff will appear here</div>
     <br>
     <br>
-    <button onclick="countDownTimer();">
-        Start
-    </button>
-    <button>
-        Stop
-    </button>
-    <script type="text/javascript">
-        var blink = document.getElementById('blinkText');
-        setInterval(function () {
-            blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0)
-        }, 1500);
-    </script>
-
+    <button onclick="btrCountdownTimer();">Start</button>
+    <button>Stop</button>
+    <br>
+    <br>
     <!-- Place to play craps-->
     <h1>Craps Game</h1>
     <div id="die1Res">The die 1 result will go here</div><br>
     <div id="die2Res">The die 2 result will go here</div><br>
     <div id="gameRes">The game results will go here</div><br>
     <button onclick="PlayCraps();">PlayCraps</button>
-</body>
 
+
+</body>
 </html>
