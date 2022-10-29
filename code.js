@@ -57,7 +57,7 @@ function btrCountdownTimer() {
 
 function chgBtrCountdownTimer() {
     console.log("btrCountdownTimer() started");
-    var currTime = 50;
+    var currTime = 25;
     var ogCurrTime = currTime;
 
     for (var i = 0; i < 11; i++) {
@@ -68,7 +68,7 @@ function chgBtrCountdownTimer() {
                 //less than 1/2 left
                 document.getElementById("countDis").innerHTML = "Blastoff!!!";
             }
-            else if (currTime < 0.5 * ogCurrTime) {
+            else if (currTime < 0.25 * ogCurrTime) {
                 //when we finishing counting down
                 document.getElementById("countDis").innerHTML = "Warning less than 1/2 to launch, time left = " + CurrTime + " seconds";
             } else {
