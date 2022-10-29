@@ -23,7 +23,7 @@ function playCraps() {
 
 
     var sum = die1 + die2;
-    if (sum == 7 || sum == 11){
+    if (sum == 7 || sum == 11) {
         console.log("you lose!!");
         document.getElementById("gameRes").innerHTML = "You did find victory. Please okay again and WIN!";
         //check for win (even doubles)
@@ -36,20 +36,46 @@ function playCraps() {
         document.getElementById("gameRes").innerHTML = "You did not win or lose. Please play again to WIN!";
     }
 }
-//btrCountdownTimer() created to fulfill assignment: Effiency at Mission Control
-function btrCountdownTimer(){
-    console.log("btrCountdownTimer() started");
-    var currTime = 20;
 
-    for(var i = 0; i < 11; i++){
-        setTimeout(function(){
-        //what we do each iteration
-        console.log(currTime);
-        document.getElementById("countDis").innerHTML = currTime;
-        if(currTime == 0){
-            document.getElementById("countDis").innerHTML
-        }
-        currTime = currTime -2;
-        }, i * 2000)
+//btrCountdownTimer() created to fulfill assignment: Effiency at Mission Control
+function btrCountdownTimer() {
+    console.log("btrCountdownTimer() started");
+    var currTime = 50;
+
+    for (var i = 0; i < 11; i++) {
+        setTimeout(function () {
+            //what we do each iteration
+            console.log(currTime);
+            document.getElementById("countDis").innerHTML = currTime;
+            if (currTime == 0) {
+                document.getElementById("countDis").innerHTML = "Blastoff!!!";
+            }
+            currTime = currTime - 5;
+        }, i * 5000)
+    }
+}
+
+function chgBtrCountdownTimer() {
+    console.log("btrCountdownTimer() started");
+    var currTime = 50;
+    var ogCurrTime = currTime;
+
+    for (var i = 0; i < 11; i++) {
+        setTimeout(function () {
+            //what we do each iteration
+            console.log(currTime);
+            if (currTime == 0) {
+                //less than 1/2 left
+                document.getElementById("countDis").innerHTML = "Blastoff!!!";
+            }
+            else if (currTime < 0.5 * ogCurrTime) {
+                //when we finishing counting down
+                document.getElementById("countDis").innerHTML = "Warning less than 1/2 to launch, time left = " + CurrTime + " seconds";
+            } else {
+                //at the beginning
+                document.getElementById("countDis").innerHTML = currTime + " seconds";
+            }
+            currTime = currTime - 5;
+        }, i * 5000)
     }
 }
