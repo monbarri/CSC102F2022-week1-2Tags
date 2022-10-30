@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAT Login</title>
+</head>
+
+<body>
+    <h1>Welcome to UAT Space</h1>
+    <h3>Please log in</h3>
+    <br>
+    <br>
+    <div id="loginStatus">Login Status</div>
+    <br>
+    <br>
+    <form id="creditSubmit" onsubmit="return false">
+        First Name: <input type="text" id="fName" /><br>
+        Last Name: <input type="text" id="lName" /><br>
+        Badge Number: <input type="text" id="badgeID" /><br>
+        <br>
+        <input type="submit" onclick="checkCreds();">
+    </form>
+</body>
+
+</html>
