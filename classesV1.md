@@ -29,10 +29,15 @@ Attributes come before properties or methods<br>
 ```mermaid
     classDiagram
     class Superclass{
+
     }
+
     class Subclass1{
+
     }
+
     class Subclass2{
+        
     }
     Superclass <|-- Subclass1
     Superclass <|-- Subclass2
