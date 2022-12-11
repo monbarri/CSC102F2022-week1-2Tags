@@ -1,44 +1,44 @@
-#sample UML Diagram for CS102 by Monique Barrops<br>
-#monibarri@uat.edu
+#sample UML diagram for CS102 by Monique Barrios <br>
+#monbarri@uat.edu
 
-Create a Diagram with 2 classes. Those classes need 3 attributes, 3 methods
+Create a diagram with 2 classes. Those classes need 3 attributes, 3 methods
 
 ```mermaid
-    classDiagram    
-    Class Shape{
-        -length
-        -width
-        -height
-        +getLength()
-        +setLength()
-        +getWidth()
-        +setWidth()
+    classDiagram
+    class Shape{
+        length
+        width
+        getLength()
+        setLength()
+        getWidth()
+        setWidth()
     }
 
-    class ShapeSig{
+   class ShapeSig{
         -length : int
         -width : int
         +getLength() : int
         +setLength(n : int) : void
-        +getWidth() : int
-        +setWidth(n : int) : void
+        +getWidth() :int
+        #setWidth(n : int)
     }
 ```
 Attributes come before properties or methods<br>
-\+ public, \- private, \# protected<br>
+\+ public, \- private, \# protected
 ```mermaid
     classDiagram
     class Superclass{
-
+        
     }
 
-    class Subclass1{
-
+   class Subclass1{
+        
     }
 
     class Subclass2{
         
     }
-    Superclass <|-- Subclass1
+
+    Superclass --|> Subclass1
     Superclass <|-- Subclass2
 ```
