@@ -1,5 +1,5 @@
 function countdownTimer() {
-    //countdownTimer will go from 50 to 0 by 5s
+    //countdownTimer will go from 50 to 0 by 2s
     console.log("countdownTimer() started");
 }
 
@@ -42,7 +42,7 @@ function btrCountdownTimer() {
     console.log("btrCountdownTimer() started");
     var currTime = 50;
 
-    for (var i = 0; i < 11; i++) {
+    for (var i = 0; i <= 11; i++) {
         setTimeout(function () {
             //what we do each iteration
             console.log(currTime);
@@ -57,7 +57,7 @@ function btrCountdownTimer() {
 
 function chgBtrCountdownTimer() {
     console.log("btrCountdownTimer() started");
-    var currTime = 25;
+    var currTime = 20;
     var ogCurrTime = currTime;
 
     for (var i = 0; i < 11; i++) {
@@ -67,15 +67,55 @@ function chgBtrCountdownTimer() {
             if (currTime == 0) {
                 //less than 1/2 left
                 document.getElementById("countDis").innerHTML = "Blastoff!!!";
-            }
-            else if (currTime < 0.25 * ogCurrTime) {
+            } else if (currTime < 0.5 * ogCurrTime) {
                 //when we finishing counting down
-                document.getElementById("countDis").innerHTML = "Warning less than 1/2 to launch, time left = " + CurrTime + " seconds";
+                document.getElementById("countDis").innerHTML = "Warning less than 1/2 to launch, time left = " + currTime + " seconds";
             } else {
                 //at the beginning
                 document.getElementById("countDis").innerHTML = currTime + " seconds";
             }
-            currTime = currTime - 5;
-        }, i * 5000)
+            currTime = currTime - 2;
+        }, i * 2000)
+    }
+}
+
+function startFun(){
+    console.log("startFun() started");
+    //disable start button
+    document.getElementById("startButton").disabled = true;
+
+    //enable (disable!) stop button
+    document.getElementById("stopButton").disabled = false;
+
+    chgBtrCountdownTimer();
+}
+
+function stopFun(){
+    console.log("stopFun() started")
+    //disable start button
+    document.getElementById("stopButton").disabled = true;
+
+    //enable (disable!) stop button
+    document.getElementById("startButton").disabled = false;
+}
+
+function playStation(){
+    console.log("playStation() started");
+    mySound = new sound(us-lab-background.mp3);
+    mySound.play();
+}
+
+function sound(srcFile){
+    this.sound = document.createElement("audio");
+    this.sound.src = srcFile;
+    this.sound.setAttribute("preload", "audio");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
     }
 }
