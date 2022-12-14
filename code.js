@@ -101,7 +101,7 @@ function stopFun(){
 
 function playStation(){
     console.log("playStation() started");
-    mySound = new sound(us-lab-background.mp3);
+    mySound = new sound("us-lab-background.mp3");
     mySound.play();
 }
 
@@ -109,7 +109,7 @@ function sound(srcFile){
     this.sound = document.createElement("audio");
     this.sound.src = srcFile;
     this.sound.setAttribute("preload", "audio");
-    this.sound.setAttribute("controls", "none");
+    this.sound.setAttribute("controls", "notes");
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function(){
@@ -117,5 +117,5 @@ function sound(srcFile){
     }
     this.stop = function(){
         this.sound.pause();
-    }
-}
+    }   
+}       
